@@ -3,7 +3,6 @@
 , zone ? ""                 # (optional) AWS zone
 , instanceType ? "t1.micro" # (optional) AWS instsance type
 , securityGroup ? null      # (optional) AWS security group
-, elasticIPv4 ? ""          # (optional) AWS elastic IP to associate to the machine
 }:
 {
   network.description = "Sphnix Docs on Nix" ;
@@ -18,8 +17,6 @@
       securityGroups = [ ] ++ lib.optional (securityGroup != null) securityGroup;
       accessKeyId = account;
       keyPair = resources.ec2KeyPairs.keypair.name;
-      ebsInitialRootDiskSize = 100;
-      elasticIPv4 = elasticIPv4;
     };
   };
 }

@@ -5,8 +5,9 @@
 { pkgs ? import <nixpkgs> {} 
 , sphinx_doc ? ./.
 , version ? "1.0"
+, system ? builtins.currentSystem
 }:
-with import <nixpkgs> {};
+with import <nixpkgs> { inherit system; };
 # Defines our application package
 pythonPackages.buildPythonPackage {
   # the name of our application

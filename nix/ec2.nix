@@ -1,4 +1,4 @@
-{ account                   # (required) AWS account to deploy to, should be an alias from ~/.ec2-keys
+{ account                   # (required) AWS symbolic name looked up in ~/.ec2-keys or a ~/.aws/credentials profile name
 , accountId                 # (required) AWS account ID
 , vpcId                     # (required) AWS VPC ID
 , region ? "us-east-1"      # (optional) AWS region

@@ -28,7 +28,7 @@ $ nix-shell
 The deployment happens in two phases, firstly by creating the deployment
 
 ```bash
-$ nixops --deployment sphinx-nix create nix/ec2.nix nix/application.nix
+$ nixops create --deployment sphinx-nix nix/ec2.nix nix/application.nix
 ```
 
 And then by executing the deployment
